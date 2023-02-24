@@ -25,7 +25,7 @@ This is a proof of concept (PoC) for the Windows Kernel Elevation of Privilege V
 Description: The vulnerability allows a local attacker to elevate privileges on a vulnerable system. The vulnerability exists due to an incorrect implementation of the kernel access control list (ACL) check. A local attacker can exploit this vulnerability by running a specially crafted application and gaining elevated privileges.
 The PoC demonstrates how to exploit the vulnerability to elevate privileges on a vulnerable system. The PoC uses the `NtSetInformationProcess` function to modify the access token of the current process, granting the process SeDebugPrivilege. The PoC then spawns a new process with the elevated privileges using the `CreateProcessWithTokenW` function.
 
-### If i dont update the readme with CVE's availble or info on them i genuinly cba , im sure you can understand if not meh yolo
+### If i dont update the readme with CVE's available or info on them i genuinly cba , im sure you can understand if not meh yolo
 
 ## Disclaimer
 
