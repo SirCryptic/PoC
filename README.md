@@ -18,6 +18,13 @@ Description: The GNU Bash shell is vulnerable to a command injection vulnerabili
 
 Description: The Struts2 framework is vulnerable to a remote code execution vulnerability (CVE-2017-9834) that allows an attacker to execute arbitrary code on a vulnerable server by sending a specially crafted Content-Type header in a HTTP request.
 
+### CVE-2023-21773
+
+This is a proof of concept (PoC) for the Windows Kernel Elevation of Privilege Vulnerability (CVE-2023-21773).
+
+Description: The vulnerability allows a local attacker to elevate privileges on a vulnerable system. The vulnerability exists due to an incorrect implementation of the kernel access control list (ACL) check. A local attacker can exploit this vulnerability by running a specially crafted application and gaining elevated privileges.
+The PoC demonstrates how to exploit the vulnerability to elevate privileges on a vulnerable system. The PoC uses the `NtSetInformationProcess` function to modify the access token of the current process, granting the process SeDebugPrivilege. The PoC then spawns a new process with the elevated privileges using the `CreateProcessWithTokenW` function.
+
 ## Disclaimer
 
 The author of this repository is not responsible for any damage caused by the use or misuse of these PoC exploits. These PoCs are intended for educational and research purposes only, and should never be used to target or exploit systems without explicit permission from the owner.
