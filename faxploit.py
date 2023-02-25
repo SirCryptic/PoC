@@ -56,7 +56,7 @@ if args.cve_2006_3126:
     # Example Usage:
     # python faxploit.py -t 192.168.0.1 -l 10.0.0.1 -cve1
     
-    # Based on Known vulnerabilities found in fax machines. 
+    # Based on Known vulnerabilities. 
     # CVE-2018-16741: a vulnerability found in certain HP OfficeJet printers that allows an attacker to enable telnet service with an empty password.
     # CVE-2012-0992: a vulnerability found in certain HP LaserJet printers that allows an attacker to execute arbitrary code by sending a specially crafted firmware update file.
     # CVE-2006-3126: a vulnerability found in certain HP OfficeJet printers that allows an attacker to execute arbitrary code by sending a specially crafted fax message.
